@@ -1,1 +1,5 @@
-All reports and handouts should be submitted to this folder.
+	Project Report:
+•Raw data was obtained from the point services' supervisor , in excel worksheet format withn 34 different worksheets consisting destination data and pickup times. 
+•The raw data is compiled into a single excel file saved as a csv. The data for pickup times had been discarded. It is formatted in a way such that the first column represents the point number followed by the place the point will go to, its distance from HU, it’s distance upon following the route, the order in which it is visited followed by the points and the departure time of the point from HU.
+•	The data in the destinations’ column consists of names of varying length and a noticeable portion of the data consists of more than one key-word. The Destinations’ data was altered and the blank spaces between the keywords were replaced by hyphens. This was done to make implementation of the data easier and constant in the overall number of data entries. This made the implementation of the code for reading data reduce in size and number of commands being executed.
+

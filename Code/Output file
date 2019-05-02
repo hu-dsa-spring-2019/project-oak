@@ -37,7 +37,6 @@ def bubble_sort(array):
     return array
 
 def chooseBest(vans):
-    print(vans)
     if len(vans)==1:
         print('Van: '+str(vans[0][0])+', Estimated time of drop off: '+str(round(vans[0][1],2))+' p.m, Order: '+vans[0][2])
     else:

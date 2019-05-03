@@ -48,4 +48,82 @@ def chooseBest(vans):
 
 chooseBest(vans)
 
+##AddingANewLocation
+
+##GoogleAPI
+import urllib.request, json
+import googlemaps
+
+
+    
+##Google MapsDdirections API endpoint
+endpoint = 'https://maps.googleapis.com/maps/api/directions/json?'
+api_key = 'AIzaSyCZG2zTi7wFQ4Z-jeTpImkPuMXWQEa6Fyw'
+##Asks the user to input Where they are and where they want to go.
+
+def dist(origin,destination):
+    #Building the URL for the request
+
+    nav_request = 'origin={}&destination={}&key={}'.format(origin,destination,api_key)
+    request = endpoint + nav_request
+
+    #Sends the request and reads the response.
+    response = urllib.request.urlopen(request).read()
+
+    #Loads response as JSON
+    directions = json.loads(response)
+    return (directions["routes"][0]["legs"][0]["distance"]["value"])
+    
+
+
+##Upgrading
+address=input('Your Address? ')
+town='saddar'
+add=address.replace(' ','+')
+uni='habib+university'
+
+def bubble_sort2(array):
+    index = len(array) - 1
+    while index >= 0:
+        for j in range(index):
+            if float(array[j][2]) < float(array[j+1][2]):
+                array[j], array[j+1] = array[j+1], array[j]
+        index -= 1
+    return array
+
+def align(a):
+    count=len(a)
+    for i in range(len(a)):
+        a[i][3]=count
+        count-=1
+    return a
+
+        
+        
+def addingAnode(address,town):
+    van=int(input('Pick one van: '))
+   
+    
+    distance=round(((dist(add,uni))/1000),1)
+    uniDist=distance
+    for i in file1[van]:
+        f=i[0].replace('-','+')
+        distance1=round(((dist(add,f))/1000),1)
+        if distance<distance1:
+            continue
+        else:
+            pos='0'
+            distance=distance1+float(i[2])
+        dataInput=[address,uniDist,distance,pos,file1[van][1][4]]
+    file1[van].append(dataInput)
+    bubble_sort2(file1[van])
+    print(align(file1[van]))
+
+
+    
+
+        
+
+addingAnode(address,town)
+
 
